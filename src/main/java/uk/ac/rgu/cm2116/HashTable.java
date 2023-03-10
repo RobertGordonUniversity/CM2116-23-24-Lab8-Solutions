@@ -1,32 +1,16 @@
 package uk.ac.rgu.cm2116;
 
-import java.util.LinkedList;
+public interface HashTable<T> {
+    
+    public boolean add(T element);
 
-public class HashTable<T> {
+    public boolean contains(T element);
 
-    private LinkedList<T>[] table;
+    public boolean remove(T element);
 
-    public HashTable(){
-        this.table = new LinkedList[20];
-    }
+    public int size();
 
-    public boolean add(T element){
-        return false;
-    }
+    public boolean isEmpty();
 
-    public boolean contains(T element){
-        return false;
-    }
 
-    public boolean remove(T element){
-        return false;
-    }
-
-    public int size(){
-        return 0;
-    }
-
-    public boolean isEmpty(){
-        return false;
-    }
 }

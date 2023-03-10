@@ -6,12 +6,14 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class HashTableTest {
+public abstract class HashTableTest {
+
+    public abstract HashTable<DummyObject> getInstance();
 
     @Test
     public void testAdd() {
 
-        HashTable<DummyObject> table = new HashTable<>();
+        HashTable<DummyObject> table = this.getInstance();
 
         DummyObject obj1 = new DummyObject(0, 1);
 
@@ -45,7 +47,7 @@ public class HashTableTest {
     @Test
     public void testContains() {
 
-        HashTable<DummyObject> table = new HashTable<>();
+        HashTable<DummyObject> table = this.getInstance();
 
         DummyObject obj1 = new DummyObject(0, 1);
 
@@ -74,7 +76,7 @@ public class HashTableTest {
     @Test
     public void testRemove() {
 
-        HashTable<DummyObject> table = new HashTable<>();
+        HashTable<DummyObject> table = this.getInstance();
 
         DummyObject obj1 = new DummyObject(0, 1);
         DummyObject obj2 = new DummyObject(0, 2);
@@ -99,7 +101,7 @@ public class HashTableTest {
 
     }
 
-    class DummyObject {
+    public class DummyObject {
 
         int var1, var2;
 
